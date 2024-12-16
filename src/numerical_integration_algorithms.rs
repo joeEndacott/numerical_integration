@@ -13,15 +13,15 @@
 /// summed to approximate the total integral.
 ///
 /// Inputs:
+/// func -> function to be integrated.
 /// lower_limit -> lower limit of integration.
 /// upper_limit -> upper limit of integration.
 /// num_steps -> number of steps that the domain is divided up into (to get a
 /// better approximation, make num_steps bigger).
-/// func -> function to be integrated.
 ///
 /// Output: integral -> approximate value of definite integral.
 ///
-pub fn fixed_step_riemann<F>(lower_limit: f64, upper_limit: f64, num_steps: u32, func: F) -> f64
+pub fn fixed_step_riemann<F>(func: F, lower_limit: f64, upper_limit: f64, num_steps: u32) -> f64
 where
     F: Fn(f64) -> f64,
 {
@@ -60,18 +60,18 @@ where
 /// summed to approximate the total integral.
 ///
 /// Inputs:
+/// func -> function to be integrated.
 /// lower_limit -> lower limit of integration.
 /// upper_limit -> upper limit of integration.
 /// num_steps -> half the number of steps that the domain is divided up into
 /// (to get a better approximation, make num_steps bigger).
 /// The Simpson algorithm requires an even number of steps, hence why the number
 /// of steps used is twice num_steps.
-/// func -> function to be integrated.
 ///
 /// Output:
 /// integral -> approximate value of definite integral.
 ///
-pub fn fixed_step_simpson<F>(lower_limit: f64, upper_limit: f64, num_steps: u32, func: F) -> f64
+pub fn fixed_step_simpson<F>(func: F, lower_limit: f64, upper_limit: f64, num_steps: u32) -> f64
 where
     F: Fn(f64) -> f64,
 {
