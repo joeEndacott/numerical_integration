@@ -6,8 +6,7 @@
 ///
 /// Description:
 /// fixed_step_riemann approximates the definite integral of some function,
-/// func,
-/// between lower_limit and upper_limit.
+/// func, between lower_limit and upper_limit.
 /// The domain is split up into num_steps equal size steps, and func is
 /// approximated as being flat over the range of each step.
 /// The integral over each step is computed, and all of these integrals are
