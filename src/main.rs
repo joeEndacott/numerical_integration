@@ -1,5 +1,6 @@
 pub mod numerical_integration_algorithms;
 pub mod test_functions;
+// pub mod variable_step_size_numerical_integration_algorithm;
 
 use numerical_integration_algorithms::fixed_step_simpson as numeric_integral;
 use test_functions::{cubic, gaussian, quartic};
