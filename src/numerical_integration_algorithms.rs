@@ -21,7 +21,12 @@
 ///
 /// Output: integral -> approximate value of definite integral.
 ///
-pub fn fixed_step_riemann<F>(func: F, lower_limit: f64, upper_limit: f64, num_steps: u32) -> f64
+pub fn fixed_step_riemann<F>(
+    func: F,
+    lower_limit: f64,
+    upper_limit: f64,
+    num_steps: u32,
+) -> f64
 where
     F: Fn(f64) -> f64,
 {
@@ -71,7 +76,12 @@ where
 /// Output:
 /// integral -> approximate value of definite integral.
 ///
-pub fn fixed_step_simpson<F>(func: F, lower_limit: f64, upper_limit: f64, num_steps: u32) -> f64
+pub fn fixed_step_simpson<F>(
+    func: F,
+    lower_limit: f64,
+    upper_limit: f64,
+    num_steps: u32,
+) -> f64
 where
     F: Fn(f64) -> f64,
 {
@@ -95,7 +105,10 @@ where
         let coefficient = if n % 2 == 0 { 2.0 } else { 4.0 };
 
         // Adding the contribution to the integral from each step.
-        integral += coefficient * step_size * func(lower_limit + (n as f64) * step_size) / 3.0;
+        integral += coefficient
+            * step_size
+            * func(lower_limit + (n as f64) * step_size)
+            / 3.0;
     }
 
     integral
