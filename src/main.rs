@@ -1,9 +1,8 @@
 pub mod numerical_integration_algorithms;
 pub mod test_functions;
-pub mod variable_step_size_numerical_integration_algorithm;
 
+use numerical_integration_algorithms::variable_step_simpson as numeric_integral;
 use test_functions::{cubic, gaussian, quartic};
-use variable_step_size_numerical_integration_algorithm::variable_step_simpson as numeric_integral;
 
 fn main() {
     println!(
